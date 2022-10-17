@@ -1,5 +1,6 @@
 from transformers import pipeline
-from fastapi import FastAPI, Response
+from fastapi import FastAPI
+from fastapi.responses import HTMLResponse
 from pydantic import BaseModel
 
 generator = pipeline('text-generation', model='gpt2')
@@ -13,7 +14,7 @@ class Body(BaseModel):
 
 @app.get('/')
 def root():
-    return Response("<h1>A self-documenting API to interact with a GPT2 model and generate text</h1>")
+    return HTMLResponse("<h1>A self-documenting API to interact with a GPT2 model and generate text</h1>")
 
 
 @app.post('/generate')
