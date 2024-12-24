@@ -14,7 +14,7 @@ class Body(BaseModel):
 
 @app.get('/')
 def root():
-    return HTMLResponse("<h1>A self-documenting API to interact with a GPT2 model and generate text</h1>")
+    return HTMLResponse("<h1>A self-documenting API to interact with a GPT2 model and generate text.</h1><p>Updated by givenfly 24 dec 2024</p>")
 
 
 @app.post('/generate')
